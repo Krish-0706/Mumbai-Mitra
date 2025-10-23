@@ -15,7 +15,7 @@ export default function NeighborhoodsPage() {
           <div className="bg-white rounded-xl p-8 shadow-lg h-full">
             <MapPin className="w-12 h-12 text-purple-600 mb-4" />
             <h3 className="font-bold text-lg mb-2">Area Guides</h3>
-            <p className="text-gray-600">Detailed guides to Mumbai's top neighborhoods, from South Mumbai to the suburbs</p>
+            <p className="text-gray-600">Detailed guides to Mumbai&apos;s top neighborhoods, from South Mumbai to the suburbs</p>
           </div>
         </Link>
 

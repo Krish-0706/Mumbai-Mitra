@@ -8,7 +8,7 @@ export default function FoodPage() {
       <div className="text-center mb-12">
         <Utensils className="w-24 h-24 text-purple-600 mx-auto mb-6" />
         <h1 className="text-4xl font-bold text-gray-900 mb-4">Food Spots Guide</h1>
-        <p className="text-xl text-gray-600">Explore Mumbai's culinary delights</p>
+        <p className="text-xl text-gray-600">Explore Mumbai&apos;s culinary delights</p>
       </div>
       
       <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">

@@ -31,7 +31,7 @@ export default function ExplorePage() {
           <div className="bg-white rounded-xl p-8 shadow-lg h-full">
             <Map className="w-12 h-12 text-purple-600 mb-4" />
             <h3 className="font-bold text-lg mb-2">Hidden Gems</h3>
-            <p className="text-gray-600">Explore the city's best-kept secrets and local favorites</p>
+            <p className="text-gray-600">Explore the city&apos;s best-kept secrets and local favorites</p>
           </div>
         </Link>
       </div>

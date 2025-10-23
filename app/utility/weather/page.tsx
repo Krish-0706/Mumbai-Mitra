@@ -11,7 +11,7 @@ export default  function WeatherPage() {
   const [error, setError] = useState<string | null>(null);
   const [location, setLocation] = useState<{ lat: number; lon: number } | null>(null);
   const [currentAQI, setCurrentAQI] = useState<number | null>(null);
-  const apiKey = "daefb899d29c1693c788e61f18e4aa9e";
+  const apiKey = "daefb899d29c1693c788e61f18e4aa9e"
   interface WeatherData {
   temperature: number;
   condition: string;

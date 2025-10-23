@@ -87,7 +87,7 @@ export default function Home() {
             Welcome to <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Mumbai Mitra</span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            Your all-in-one companion for navigating the City of Dreams. From local trains to hidden gems, we've got Mumbai covered.
+            Your all-in-one companion for navigating the City of Dreams. From local trains to hidden gems, we&apos;ve got Mumbai covered.
           </p>
           
           {/* Quick Stats */}

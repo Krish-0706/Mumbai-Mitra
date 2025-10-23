@@ -86,7 +86,7 @@ export default function TrainsPage() {
           <div>
             <h3 className="font-bold text-orange-900">Peak Hours Active</h3>
             <p className="text-orange-700 text-sm">
-              Trains are more frequent but expect heavy crowds. Ladies' compartments recommended for women travelers.
+              Trains are more frequent but expect heavy crowds.               Ladies&apos; compartments recommended for women travelers.
             </p>
           </div>
         </div>
@@ -315,7 +315,7 @@ export default function TrainsPage() {
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-blue-600 rounded-full mt-1.5 flex-shrink-0"></div>
-                <p className="text-gray-700">Ladies' compartments available in all trains</p>
+                <p className="text-gray-700">Ladies&apos; compartments available in all trains</p>
               </div>
             </div>
           </div>

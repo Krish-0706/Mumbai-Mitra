@@ -8,7 +8,7 @@ export default function LocalVibePage() {
       <div className="text-center mb-12">
         <Users className="w-24 h-24 text-purple-600 mx-auto mb-6" />
         <h1 className="text-4xl font-bold text-gray-900 mb-4">Local Vibes</h1>
-        <p className="text-xl text-gray-600">Experience the unique character of Mumbai's neighborhoods</p>
+        <p className="text-xl text-gray-600">Experience the unique character of Mumbai&apos;s neighborhoods</p>
       </div>
 
       <FilteredLocalVibes vibes={localVibes} />

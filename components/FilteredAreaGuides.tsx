@@ -50,7 +50,7 @@ export default function FilteredAreaGuides({ guides }: FilteredAreaGuidesProps) 
             <select
               className="w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500"
               value={selectedLifestyle}
-              onChange={(e) => setSelectedLifestyle(e.target.value as any)}
+              onChange={(e) => setSelectedLifestyle(e.target.value as typeof lifestyleFilters[number] | 'all')}
             >
               <option value="all">All Features</option>
               {lifestyleFilters.map(filter => (
