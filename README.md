@@ -39,7 +39,7 @@ For most of the parts, we've got static information, we'll keep on adding to the
 
 1. Clone the repository:
 \`\`\`bash
-git clone https://github.com/yourusername/mumbai-mitra.git
+git clone https://github.com/Krish-0706/Mumbai-Mitra.git
 \`\`\`
 
 2. Install dependencies:
