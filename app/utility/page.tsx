@@ -17,8 +17,7 @@ export default function UtilityPage() {
       description: 'Real-time weather updates and traffic hotspots across Mumbai',
       color: 'from-cyan-500 to-cyan-600',
       href: '/utility/weather',
-      available: false,
-      comingSoon: 'Day 3',
+      available: true,
     },
   ];
 
@@ -62,8 +61,9 @@ export default function UtilityPage() {
                   <span>→</span>
                 </div>
               ) : (
-                <div className="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-lg inline-block text-sm font-semibold">
-                  Coming {utility.comingSoon}
+                <div className="text-gray-400 font-semibold flex items-center space-x-2">
+                  <span>Coming Soon</span>
+                  <span>⏳</span>
                 </div>
               )}
             </Link>

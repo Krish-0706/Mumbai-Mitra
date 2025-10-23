@@ -25,21 +25,21 @@ export default function Home() {
       title: 'Bollywood Spots', 
       desc: 'Famous shooting locations',
       color: 'from-purple-500 to-purple-600',
-      href: '/explore'
+      href: '/explore/bollywood'
     },
     { 
       icon: Utensils, 
       title: 'Food Havens', 
       desc: 'Must-try local eateries',
       color: 'from-orange-500 to-orange-600',
-      href: '/explore'
+      href: '/explore/food'
     },
     { 
       icon: MapPin, 
       title: 'Hidden Gems', 
       desc: 'Undiscovered treasures',
       color: 'from-green-500 to-green-600',
-      href: '/explore'
+      href: '/explore/hiddengems'
     },
   ];
 
@@ -49,21 +49,21 @@ export default function Home() {
       title: 'Area Guides', 
       desc: 'Detailed neighborhood info',
       color: 'from-indigo-500 to-indigo-600',
-      href: '/neighborhoods'
+      href: '/neighborhoods/guide'
     },
     { 
       icon: TrendingUp, 
       title: 'Price Insights', 
       desc: 'Rent, food & transport costs',
       color: 'from-pink-500 to-pink-600',
-      href: '/neighborhoods'
+      href: '/neighborhoods/price'
     },
     { 
       icon: Users, 
       title: 'Local Vibes', 
       desc: 'Culture & community',
       color: 'from-teal-500 to-teal-600',
-      href: '/neighborhoods'
+      href: '/neighborhoods/local'
     },
   ];
 
