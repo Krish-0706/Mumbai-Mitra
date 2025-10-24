@@ -10,45 +10,40 @@ export default  function WeatherPage() {
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [location, setLocation] = useState<{ lat: number; lon: number } | null>(null);
-  const [currentAQI, setCurrentAQI] = useState<number | null>(null);
-  const apiKey = "daefb899d29c1693c788e61f18e4aa9e"
+
   interface WeatherData {
   temperature: number;
   condition: string;
   humidity: number;
   windSpeed: number;
 }
-  useEffect(() => {
-    // We define async function INSIDE useEffect
-    async function fetchWeather() {
-      try {
-        
-        const city = "Mumbai";
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-        
-        const res = await fetch(url);
-        const data = await res.json();
+useEffect(() => {
+  async function fetchWeather() {
+    try {
+      // Call YOUR API route instead of OpenWeather directly
+      const res = await fetch('/api/weather?city=Mumbai');
+      const data = await res.json();
 
-        if (!res.ok) {
-          throw new Error(data.message || "Failed to fetch weather");
-        }
-
-        const currentWeather : WeatherData = {
-          temperature: data.main.temp,
-          condition: data.weather[0].main,
-          humidity: data.main.humidity,
-          windSpeed: data.wind.speed,
-        };
-
-        setWeather(currentWeather);
-      } catch (err) {
-        console.error(err);
-        setError("Could not load weather data");
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to fetch weather");
       }
-    }
 
-    fetchWeather();
-  }, []); // runs once on component mount
+      const currentWeather: WeatherData = {
+        temperature: Math.round(data.main.temp),
+        condition: data.weather[0].main,
+        humidity: data.main.humidity,
+        windSpeed: Math.round(data.wind.speed),
+      };
+
+      setWeather(currentWeather);
+    } catch (err) {
+      console.error(err);
+      setError("Could not load weather data");
+    }
+  }
+
+  fetchWeather();
+}, []); // runs once on component mount
   // Mock current weather data for demonstration
    useEffect(() => {
     if ("geolocation" in navigator) {
