@@ -177,7 +177,12 @@ useEffect(() => {
               <div className="text-4xl font-bold text-orange-600 mb-2">{currentWeather.aqi ?? '—'}</div>
               <div className="text-sm text-gray-600">AQI - {currentWeather.aqiLevel}</div>
               <div className="mt-4 text-xs text-gray-500">
-                Sensitive groups should limit outdoor exposure
+                {currentWeather.aqiLevel === "Fair" && 'Air quality is acceptable.'}
+                {currentWeather.aqiLevel === 'Good' && 'Air quality is satisfactory.' }
+                {currentWeather.aqiLevel === 'Moderate' && 'Air quality is acceptable.' }
+                {currentWeather.aqiLevel === 'Poor' && 'Sensitive groups may experience health effects.'}
+                {currentWeather.aqiLevel === 'Very Poor' && 'Health alert: everyone may experience health effects.'}
+                {currentWeather.aqiLevel === 'Severe' && 'Health warnings of emergency conditions.'}
               </div>
             </div>
           </div>
