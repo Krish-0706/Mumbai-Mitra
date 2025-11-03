@@ -10,6 +10,7 @@ export default  function WeatherPage() {
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [location, setLocation] = useState<{ lat: number; lon: number } | null>(null);
+  const [aqi, setAqi] = useState<{ index: number; level: string } | null>(null);
 
   interface WeatherData {
   temperature: number;
@@ -62,13 +63,42 @@ useEffect(() => {
   }, []);
 
 
+  // Fetch AQI based on location if available; fallback to Mumbai city
+  useEffect(() => {
+    async function fetchAqi() {
+      try {
+        let url = '/api/aqi';
+        if (location?.lat != null && location?.lon != null) {
+          url = `/api/aqi?lat=${location.lat}&lon=${location.lon}`;
+        } else {
+          url = '/api/aqi?city=Mumbai';
+        }
+
+        const res = await fetch(url);
+        const data = await res.json();
+
+        if (!res.ok) {
+          throw new Error(data.error || 'Failed to fetch AQI');
+        }
+
+        setAqi({ index: data.index, level: data.level });
+      } catch (err) {
+        console.error(err);
+        setError((prev) => prev ?? 'Could not load AQI data');
+      }
+    }
+
+    fetchAqi();
+  }, [location]);
+
+
   const currentWeather = {
     temperature: weather?.temperature,
     condition: weather?.condition,
     humidity: weather?.humidity,
     windSpeed: weather?.windSpeed,
-    aqiLevel: 'Moderate',
-    aqi: "115",
+    aqiLevel: aqi?.level ?? '—',
+    aqi: aqi?.index 
   };
 
   const filteredHotspots = selectedZone === 'all' 
@@ -144,7 +174,7 @@ useEffect(() => {
               <Wind className="w-6 h-6 text-orange-600" />
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-orange-600 mb-2">{currentWeather.aqi}</div>
+              <div className="text-4xl font-bold text-orange-600 mb-2">{currentWeather.aqi ?? '—'}</div>
               <div className="text-sm text-gray-600">AQI - {currentWeather.aqiLevel}</div>
               <div className="mt-4 text-xs text-gray-500">
                 Sensitive groups should limit outdoor exposure
